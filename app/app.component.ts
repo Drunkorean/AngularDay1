@@ -3,13 +3,17 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'async-example',
     template: `<div>
-    	<p>Today is {{today | date}}</p>
-    	<p>Or if you prefer, {{today | date:'fullDate'}}</p>
-    	<p>The time is {{today | date:'jmZ'}}<p>
+    	<p>e (no formatting): {{e}}</p>
+    	<p>e (3.1-5): {{e | number:'3.1-5'}}</p>
+    	<p>pi (no formatting): {{pi}}</p>
+    	<p>pi (3.5-5): {{pi | number:'3.5-5'}}</p>
+
+
     	<div>
     `
 })
 export class AppComponent { 
-	today: number = Date.now();
+	pi: number = 3.141;
+	e: number = 2.718281828459045;
 
 }
