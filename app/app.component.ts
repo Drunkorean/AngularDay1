@@ -3,17 +3,16 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'async-example',
     template: `<div>
-    	<p>e (no formatting): {{e}}</p>
-    	<p>e (3.1-5): {{e | number:'3.1-5'}}</p>
-    	<p>pi (no formatting): {{pi}}</p>
-    	<p>pi (3.5-5): {{pi | number:'3.5-5'}}</p>
+    	<p>Without JSON pipe:</p>
+    	<pre>{{object}}</pre>
+    	<p>With JSON pipe:</p>
+    	<pre>{{object | json}}</pre>
 
 
     	<div>
     `
 })
 export class AppComponent { 
-	pi: number = 3.141;
-	e: number = 2.718281828459045;
+	object: Object = {foo: 'bar', baz: 'qux', nested: {xyz: 3, numbers: [1, 2, 3, 4, 5]}};
 
 }
